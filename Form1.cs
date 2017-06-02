@@ -12,7 +12,7 @@ namespace game
 {
     public partial class Form1 : Form
     {
-        int speed = 10;
+        int speed = 5;
         int movex;
         int movey;
         public Form1()
@@ -68,6 +68,12 @@ namespace game
             {
                 movex = +speed;
             }
+            if (e.KeyCode == Keys.Space)
+            {
+                pictureBox2.Left = pictureBox1.Left;
+                pictureBox2.Top = pictureBox1.Top;
+            }
+
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
