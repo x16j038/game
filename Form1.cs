@@ -18,7 +18,7 @@ namespace game
         public Form1()
         {
             InitializeComponent();
-        } 
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -48,6 +48,46 @@ namespace game
         {
             pictureBox1.Left += movex;
             pictureBox1.Top += movey;
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                movey = -speed;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                movey = +speed;
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                movex = -speed;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                movex = +speed;
+            }
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                movey = 0;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                movey = 0;
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                movex = 0;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                movex = 0;
+            }
         }
     }
 }
